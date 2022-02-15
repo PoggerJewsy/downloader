@@ -1,6 +1,5 @@
 use std::env;
 use std::io::Cursor;
-use std::panic;
 
 type Result<T> = std::result::Result<T, Box<dyn std::error::Error + Send + Sync>>;
 async fn fetch_url(url: String, file_name: String) -> Result<()> {
@@ -10,19 +9,24 @@ async fn fetch_url(url: String, file_name: String) -> Result<()> {
     std::io::copy(&mut content, &mut file)?;
     Ok(())
 }
+
 #[tokio::main]
 async fn main() {
-    panic::set_hook(Box::new(|_info| {
-        println!("Invalid input");
-    }));
     let args: Vec<String> = env::args().collect();
-    let link = &args[1];
-    let file_name = &args[2];
-    if !link.is_empty() && !file_name.is_empty() {
-        println!("Link: {}", link);
-        println!("File name: {}", file_name);
-        fetch_url(link.to_string(), file_name.to_string())
-            .await
-            .unwrap();
+    println!("{:?}", args);
+    let link = match args.get(1){
+        Some(value) => value,
+        None => {println!("Please provide a link"); return;}
+    };
+    let filename = match args.get(2){
+        Some(value) => value,
+        None => {println!("Please provide a file name"); return;}
+    };
+    if link != "__None" && filename != "__None" {
+    println!("Link: {}", link);
+    println!("File name: {}", filename);
+    match fetch_url(link.to_string(), filename.to_string()).await {
+        Ok(_) => println!("Downloaded file"),
+        Err(e) => println!("Error: {}", e)
     }
-}
+}}
