@@ -3,7 +3,7 @@
 ```bash
 ./downloader <Link> <Filename>
 ```
-## Info
+## Info (Lowest achieved `539.0`KiB)
 #### Debug build size: `56.2`MiB (`57,508`KiB & `58,887,592`Bytes)
 #### Release build size: `7.8`MiB (`8,034`KiB & `8,226,264`Bytes) 
 #### opt-level = "z" : release build size: `8.2`MiB (`8,414`KiB & `8,615,680`Bytes)
@@ -17,4 +17,10 @@
 #### opt-level = "z" lto = true codegen-units = 1 panic = "abort" stripped : release build size: `2.0`MiB (`2,032`KiB & `2,080,312`Bytes)
 #### opt-level = "s" lto = true codegen-units = 1 panic = "abort" stripped : release build size: `2.0`MiB (`2,044`KiB & `2,092,600`Bytes)
 #### opt-level = "z" lto = true codegen-units = 1 panic = "abort" stripped upx : release build size: `753.8`KiB (`771,852`Bytes)
-#### opt-level = "s" lto = true codegen-units = 1 panic = "abort" stripped upx : release build size: `765.6` KiB (`783,940`Bytes)
+#### opt-level = "s" lto = true codegen-units = 1 panic = "abort" stripped upx : release build size: `765.6`KiB (`783,940`Bytes)
+#### opt-level = "z" lto = true codegen-units = 1 panic = "abort" build-std : release build size: `1.8`MiB (`1,831`KiB && `1,873,936`Bytes)
+#### opt-level = "s" lto = true codegen-units = 1 panic = "abort" build-std : release build size: `1.7`MiB (`1,760`KiB && `1,801,432`Bytes)
+#### opt-level = "z" lto = true codegen-units = 1 panic = "abort" build-std stripped : release build size: `1.3`MiB (`1,359`KiB && `1,390,800`Bytes)
+#### opt-level = "s" lto = true codegen-units = 1 panic = "abort" build-std stripped : release build size: `1.4`MiB (`1,451`KiB && `1,485,008`Bytes)
+#### opt-level = "z" lto = true codegen-units = 1 panic = "abort" build-std stripped upx : release build size: `539.0`KiB (`551,948`Bytes)
+#### opt-level = "s" lto = true codegen-units = 1 panic = "abort" build-std stripped upx : release build size: `581.6`KiB (`595,608`Bytes)
