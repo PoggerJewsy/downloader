@@ -3,7 +3,7 @@
 ```bash
 ./downloader <Link> <Filename>
 ```
-## Info (Lowest achieved `539.0`KiB)
+## Info (Lowest achieved `319.5`KiB)
 #### Debug build size: `56.2`MiB (`57,508`KiB & `58,887,592`Bytes)
 #### Release build size: `7.8`MiB (`8,034`KiB & `8,226,264`Bytes) 
 #### opt-level = "z" : release build size: `8.2`MiB (`8,414`KiB & `8,615,680`Bytes)
@@ -30,3 +30,5 @@
 #### opt-level = "s" lto = true codegen-units = 1 panic = "abort" build-std panic_immediate_abort stripped : release build size: `1.2`MiB (`1,183`KiB && `1,210,568`Bytes)
 #### opt-level = "z" lto = true codegen-units = 1 panic = "abort" build-std panic_immediate_abort stripped upx : release build size: `433.1`KiB (`443,508`Bytes)
 #### opt-level = "s" lto = true codegen-units = 1 panic = "abort" build-std panic_immediate_abort stripped upx : release build size: `475.6`KiB (`486,996`Bytes)
+### opt-level = "z" lto = true codegen-units = 1 panic = "abort" build-std panic_immediate_abort stripped upx --best --lzma : release build size: `319.5`KiB (`327,176`Bytes)
+### opt-level = "s" lto = true codegen-units = 1 panic = "abort" build-std panic_immediate_abort stripped upx --best --lzma : release build size: `352.7`KiB (`361,136`Bytes)
